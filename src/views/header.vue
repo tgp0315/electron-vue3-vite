@@ -45,6 +45,7 @@ const changTab = (t) => {
     a {
       display: inline-block;
       width: 100%;
+      text-align: center;
     }
     &:hover {
       background: #3cbf81;

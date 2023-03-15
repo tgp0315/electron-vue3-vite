@@ -6,11 +6,17 @@
   </div>
 </template>
 <script setup>
-import { inject } from 'vue';
+import { inject, onMounted } from 'vue';
 import SearchBar from './searchBar.vue'
 import DialogC from './dialog.vue'
 import ListC from './list.vue'
-const { isShow } = inject('dialog-show')
+const { isShow, setIsShow } = inject('dialog-show')
+const setDialog = () => {
+  setIsShow(true)
+}
+onMounted(() => {
+  dialog.openDialog(setDialog)
+})
 </script>
 <style lang="less">
   .home {
