@@ -7,7 +7,7 @@ require('./controller/getSource')
 require('./controller/alert')
 require('./controller/openWindow')
 require('./controller/getimgList')
-
+const url = process.env.VITE_DEV_SERVER_URL
 const winState = new WinState({
 	width: 1200,
 	height: 600,
@@ -25,7 +25,14 @@ const createWindow = () => {
     }
   })
   // console.log(app.getAppPath())
-  win.loadURL('http://127.0.0.1:5173')
+  if (process.env.VITE_DEV_SERVER_URL) { // electron-vite-vue#298
+    win.loadURL(url)
+    // Open devTool if the app is not packaged
+    win.webContents.openDevTools()
+  } else {
+    win.loadFile(indexHtml)
+  }
+  // win.loadURL('http://127.0.0.1:5174')
   // win.webContents.openDevTools()
   buildMenu(win)
   win.on('ready-to-show', () => {
