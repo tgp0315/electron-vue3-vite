@@ -18,7 +18,7 @@ import { inject, ref } from 'vue'
 import userWebsiteStore from '@/store'
 const websiteStore = userWebsiteStore()
 const { setIsShow } = inject('dialog-show')
-const url = ref('https://juejin.cn/user/1978776660216136')
+const url = ref('')
 const isclick = ref(false)
 const cancle = () => {
   setIsShow(false)

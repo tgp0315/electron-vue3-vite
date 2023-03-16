@@ -109,7 +109,8 @@ const buildMenu = (win) => {
             win.webContents.send('on-open-dialog-event')
             // event.sender.send()
             // console.log(1111111)
-          }
+          },
+          accelerator: 'CmdOrCtrl+I'
         }
       ]
     }

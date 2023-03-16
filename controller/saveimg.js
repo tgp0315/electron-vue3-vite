@@ -7,7 +7,7 @@ let imgUrl = ''
 const menu = Menu.buildFromTemplate([
   {
     label: '保存图片',
-    accelerator: 'CommandOrControl+S',
+    accelerator: 'CmdOrCtrl+S',
     click: async () => {
       console.log(1111111)
       try {

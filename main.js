@@ -2,6 +2,7 @@ const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const WinState = require('electron-win-state').default
 const buildMenu = require('./controller/buildMenu')
+const createTray = require('./controller/tray')
 require('./controller/getSource')
 require('./controller/alert')
 require('./controller/openWindow')
@@ -23,11 +24,13 @@ const createWindow = () => {
       preload: path.resolve(__dirname, './preload/index.js')
     }
   })
+  // console.log(app.getAppPath())
   win.loadURL('http://127.0.0.1:5173')
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
   buildMenu(win)
   win.on('ready-to-show', () => {
     win.show()
+    createTray(app, win)
   })
   winState.manage(win)
   // const menu = new Menu()
