@@ -1,0 +1,27 @@
+{
+  "appId": "guiguzi",
+  "asar": true,
+  "directories": {
+    "output": "release/${version}"
+  },
+  "files": [
+    "dist",
+    "dist-electron"
+  ],
+  "nsis": {
+    "oneClick": false,
+    "allowElevation": true,
+    "allowToChangeInstallationDirectory": true,
+    "installerIcon": "buil/ico.ico",
+    "uninstallerIcon": "buil/ico.ico",
+    "installerHeader": "buil/ico.ico",
+    "installerHeaderIcon": "buil/ico.ico",
+    "uninstallDisplayName": "${productName}${version}",
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "SHom",
+    "deleteAppDataOnUninstall": false,
+    "runAfterFinish": true,
+    "menuCategory": false
+  }
+}

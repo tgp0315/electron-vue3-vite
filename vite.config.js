@@ -22,6 +22,7 @@ export default defineConfig(({
       const isBuild = command === 'build'
       const sourcemap = isServe || !!process.env.VSCODE_DEBUG
       return {
+        base: './',
         plugins: [
           vue(),
           electron([

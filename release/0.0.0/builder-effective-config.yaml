@@ -1,0 +1,25 @@
+directories:
+  output: release/${version}
+  buildResources: build
+appId: guiguzi
+asar: true
+files:
+  - filter:
+      - dist
+      - dist-electron
+nsis:
+  oneClick: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  installerIcon: buil/ico.ico
+  uninstallerIcon: buil/ico.ico
+  installerHeader: buil/ico.ico
+  installerHeaderIcon: buil/ico.ico
+  uninstallDisplayName: ${productName}${version}
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: SHom
+  deleteAppDataOnUninstall: false
+  runAfterFinish: true
+  menuCategory: false
+electronVersion: 23.1.4
