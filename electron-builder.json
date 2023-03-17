@@ -1,26 +1,61 @@
 {
   "appId": "guiguzi",
+  "productName": "private-favorite",
   "asar": true,
-  "directories": {
-    "output": "release/${version}"
+  "dmg": {
+    "icon": "src/assets/private.png",
+    "iconSize": "100",
+    "title": "${productName}",
+    "contents": [{
+        "x": 410,
+        "y": 190,
+        "type": "link",
+        "path": "/Applications"
+      },
+      {
+        "x": 130,
+        "y": 190,
+        "type": "file"
+      }
+    ],
+    "window": {
+      "height": 380,
+      "width": 540
+    }
   },
-  "files": [
-    "dist",
-    "dist-electron"
-  ],
+  "mac": {
+    "icon": "src/assets/private.png",
+    "artifactName": "${productName}-${platform}-${arch}-${version}.${ext}",
+    "target": [ 
+      "dmg",
+      "zip" 
+    ]
+  },
+  "win": {
+    "icon": "src/assets/private.ico",
+    "artifactName": "${productName}-${platform}-${arch}-${version}.${ext}",
+    "target": [ 
+      {
+        "target": "nsis",
+        "arch": [
+          "ia32"
+        ]
+      }
+    ]
+  },
   "nsis": {
     "oneClick": false,
     "allowElevation": true,
     "allowToChangeInstallationDirectory": true,
-    "installerIcon": "buil/ico.ico",
-    "uninstallerIcon": "buil/ico.ico",
-    "installerHeader": "buil/ico.ico",
-    "installerHeaderIcon": "buil/ico.ico",
+    "installerIcon": "src/assets/private.ico",
+    "uninstallerIcon": "src/assets/private.ico",
+    "installerHeader": "src/assets/private.ico",
+    "installerHeaderIcon": "src/assets/private.ico",
     "uninstallDisplayName": "${productName}${version}",
     "createDesktopShortcut": true,
     "createStartMenuShortcut": true,
-    "shortcutName": "SHom",
-    "deleteAppDataOnUninstall": false,
+    "shortcutName": "收藏夹",
+    "deleteAppDataOnUninstall": true,
     "runAfterFinish": true,
     "menuCategory": false
   }

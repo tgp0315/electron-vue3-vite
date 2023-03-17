@@ -1,11 +1,13 @@
 {
   "name": "electron-vue3-vite",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.8",
   "main": "./main.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build && electron-builder",
+    "build-electron": "electron-builder",
+    "build-vite": "vite build",
     "preview": "vite preview",
     "electron-dev": "nodemon --exce electron . --watch --ext js,css,html,vue",
     "start": "electron-forge start",
@@ -14,7 +16,7 @@
   },
   "debug": {
     "env": {
-      "VITE_DEV_SERVER_URL": "http://127.0.0.1:5174/"
+      "VITE_DEV_SERVER_URL": "http://127.0.0.1:5173/"
     }
   },
   "dependencies": {
